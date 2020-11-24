@@ -1,0 +1,46 @@
+const express = require('express');
+const morgan = require('morgan');
+const app = express();
+
+require('./connection.js');
+require('./routes/routes.js');
+
+/* 777 function logger(req, res, next) {
+    console.log(`Route received: ${req.protocol}://${req.get('host')}${req.originalUrl}`);
+    next();
+}*/
+
+//Settings
+app.set('appName', 'Collect');
+app.set('port', 3000);
+app.set('view engine', 'ejs');
+
+//Middlewares
+app.use(express.json()); //Middleware para que express reciba los json
+app.use(morgan('dev'));  //Middleware para ver las peticiones que llegan
+// 777 app.use(logger);
+
+//Routes
+app.get('/', (req, res) => {
+    const data = [{name: 'john'}, {name: 'tugfa'}, {name: 'steve'}];
+    res.render('index.ejs', {people: data});
+});
+
+app.get('/initial', (req, res) => {
+    res.send('Hello world');
+});
+
+app.get('/about', (req, res) => {
+    res.send('About me');
+});
+
+app.post('/search', (req, res) => {
+    res.send('About me');
+});
+
+app.use(express.static('public'));
+
+app.listen(app.get('port'), () => {
+    console.log(app.get('appName'));
+    console.log('app on port', app.get('port'));
+});
