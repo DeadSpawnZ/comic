@@ -33,7 +33,7 @@ class Navigation extends Component {
                     <Nav>
                         <Nav.Link href="/myuser"><FontAwesomeIcon icon={faCrown} /> Yo</Nav.Link>
                         <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                            Mis comics
                         </Nav.Link>
                         <NavDropdown title="Yo" id="collasible-nav-dropdown" className="userMenu">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

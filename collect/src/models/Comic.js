@@ -6,10 +6,6 @@ const comicSchema = new Schema({
         type:       String,
         required:   true
     },
-    variant: {
-        type:       String,
-        required:   false
-    },
     print:{
         type:       Number,
         required:   true       
@@ -22,13 +18,25 @@ const comicSchema = new Schema({
         type:       Number,
         required:   true
     },
+    date: {
+        type:       Date,
+        required:   true
+    },
     cover: {
         type:       String
     },
-    titleid: {
+    variant: {
+        type:       String
+    },
+    title: {
         type:       types.ObjectId,
-        required:   true,
-        ref:        'Title'
+        ref:        'Title',
+        required:   true
+    },
+    user: {
+        type:       types.ObjectId,
+        ref:        'User',
+        required:   true
     }
 },{
     timestamps:     true

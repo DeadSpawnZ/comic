@@ -1,3 +1,7 @@
+body{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .navC{
   background-color: #20232a;
 }
@@ -47,6 +51,7 @@
   position: absolute;
   box-sizing: border-box;
   transition:  0.6s;
+  border: 1px solid #fff;
 }
 
 .wrapper:hover{
@@ -71,12 +76,14 @@
 .image{
   width: 100%;
   position: absolute;
+  user-select: none;
 }
 
 .imageOp{
   width: 100%;
   opacity: 70%;
   position: absolute;
+  user-select: none;
 }
 
 .title{
@@ -90,11 +97,11 @@
   color: white;
   text-justify: inter-word;
   line-height: 1;
+  box-sizing: border-box;
 }
 
 .buttons{
   width: 100%;
-  height: 15%;
   position: absolute;
   bottom: -15%;
   background-color: gray;
@@ -108,12 +115,13 @@
 .buttons2{
   width: 100%;
   position: absolute;
-  bottom: -0.5%;
+  bottom: -1px;
   background-color: gray;
   text-align: center;
   opacity: 100%;
   color: white;
   visibility: visible;
+  cursor: pointer;
 }
 
 .added{
@@ -139,6 +147,13 @@
   color: #FFE1A4;
   display: inline-block;
 }
+.wantedDisabled{
+  width: 50%;
+  height: 100%;
+  background-color:  #2B2B2B;
+  color: #6E6E6F;
+  display: inline-block;
+}
 
 .country{
   width: 20%;
@@ -150,13 +165,8 @@
   background-color: white;
 }
 
-@font-face {
-  font-family: comicFont;
-  src: url("/KOMTIT__.ttf");
-}
 
 .titleTitle{
-  font-family: comicFont;
   font-size: 2.3em;
   text-align: center;
   width: 100%;
@@ -166,3 +176,26 @@
 .userMenu{
   background-color: #343a40!important;
 }
+
+.wrapper-modal{
+  width: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  transition:  0.6s;
+  border: 1px solid #fff;
+}
+
+.modal-fullscreen{
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabs-modal > a {
+  color: #6c757d;
+}
+
+div[class=modal-header] > div{
+  width: 100%;
+} 

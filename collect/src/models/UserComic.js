@@ -12,8 +12,14 @@ const userSchema = new Schema({
         ref:        'Comic',
         required:   true
     },
-    state: {
-        type:       Number
+    status: {
+        type:       String,
+        enum:       ['want','have'],
+        required:   true
+    },
+    quality: {
+        type:       Number,
+        default:    0
     }
 }, {
     timestamps:     true

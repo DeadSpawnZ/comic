@@ -35,6 +35,7 @@ userCtrl.signIn = async (req, res) => {
         res.json({ message: 'Usuario no encontrado' });
     } else {
         const matchPassword = await User.matchPassword(password, user.password);
+        console.log(matchPassword);
         if (!matchPassword) {
             return res.status(401).json({ token: null, message: 'Password incorrecto' })
         } else {

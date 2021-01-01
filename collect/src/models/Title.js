@@ -5,7 +5,6 @@ const titleSchema = new Schema({
     titlename: {
         type:       String,
         required:   true,
-        unique:     true
     },
     editorial: {
         type:       String,

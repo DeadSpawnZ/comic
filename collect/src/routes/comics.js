@@ -30,12 +30,14 @@ router.route('/search')
     .post(comicCtrl.searchComic);
 
 router.route('/')
-    .post(upload.single('coverfile'), comicCtrl.postComic);
+    .post(upload.single('coverfile'), comicCtrl.postComic)
+    .get(comicCtrl.getComic);
 
 router.route('/alltitle')
     .get(comicCtrl.getAllTitle);
 
 router.route('/addtomycomics')
     .post(comicCtrl.addComic);
+
     
 module.exports = router;
